@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MyDashboardComponent } from './my-dashboard/my-dashboard.component';
 
+
+import { FormsModule } from '@angular/forms';
+import { NgbModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -12,7 +15,10 @@ import { MyDashboardComponent } from './my-dashboard/my-dashboard.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbAlertModule,
+    FormsModule,
+     NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
