@@ -1,0 +1,78 @@
+<nav class="navbar  navbar-dark bg-primary">
+    <form class="form-inline">
+        <a class="navbar-brand" href="#" style="font-size: 25pt;">Bus Reservation System</a>
+        <button type="button" class="btn btn-dark loginStyle " style=" float: right;">Logout</button>
+    </form>
+</nav>
+<!--<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link fw-bolder" href="#" >About <span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Terms of Use</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+  </nav> -->
+
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+
+
+                <h2 class="usernameStyle">Hello {{username}}</h2>
+            </li>
+
+
+        </ul>
+    </div>
+</nav>
+
+<div class="">
+    <ul class="nav  flex-column  verticalStyle">
+        <li class="nav-item verticalNavStyle">
+            <a class="nav-link active" href="#" style="color: white;">My Dashboard</a>
+        </li>
+        <li class="nav-item verticalNavStyle">
+            <a class="nav-link active" href="#" style="color: white;">Bookings</a>
+        </li>
+        <li class="nav-item verticalNavStyle">
+            <a class="nav-link" href="#" style="color: white;">Profile</a>
+        </li>
+        <li class="nav-item verticalNavStyle">
+            <a class="nav-link" href="#" style="color: white;">Change Password</a>
+        </li>
+        <li class="nav-item verticalNavStyle">
+            <a class="nav-link " href="#" style="color: white;">Wallet</a>
+        </li>
+    </ul>
+</div>
+
+<div *ngIf="buttonStatus">
+
+    <div class="MyDashboard">
+        <h1 style="color: black">
+            Up-Comming Bookings
+        </h1>
+        <p>{{bookingObj.Source}} --> {{bookingObj.Destination}}</p>
+        <button type="button" class="btn btn-primary mr-5" href="#">Cancel</button>
+        <button type="button" class="btn btn-primary" href="#">Print</button>
+    </div>
+</div>
+
+<!--
+  <div class="vertical-menu">
+    <a href="#" class="active">My Dashboard</a>
+    <a href="#">Bookings</a>
+    <a href="#">Profile</a>
+    <a href="#">Change Password</a>
+    <a href="#">Wallet</a>
+  </div>
+  -->

@@ -1,0 +1,58 @@
+button.loginStyle
+{
+  float: right;
+  position: absolute; right: 0;
+  margin-right: 1%;
+}
+
+.usernameStyle{
+   color: aliceblue;
+}
+
+.verticalNavStyle
+{
+ padding-bottom: 3%;
+ padding-top: 3%;
+ font-size: 20pt;
+ color: white;
+/* width: 15%;*/
+
+}
+
+.verticalStyle
+{
+  width: 15%;
+  height: 100%;
+  background-color: #2827CC;
+
+}
+.vertical-menu {
+  width: 200px;
+}
+
+.vertical-menu a {
+  background-color: #eee;
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc;
+}
+
+.vertical-menu a.active {
+  background-color:#f1f1f5;
+  color: white;
+}
+
+a:hover {
+  background-color:#120E43;
+}
+.MyDashboard{
+        width: 500px;
+        margin: 0 auto;
+}
