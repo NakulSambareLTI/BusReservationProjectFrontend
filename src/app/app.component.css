@@ -52,3 +52,7 @@ button.loginStyle
 a:hover {
   background-color:#120E43;
 }
+.MyDashboard{
+        width: 500px;
+        margin: 0 auto;
+}

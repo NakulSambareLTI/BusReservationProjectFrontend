@@ -6,13 +6,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./my-dashboard.component.css']
 })
 export class MyDashboardComponent implements OnInit {
+  title = 'BusReservationFrontend';
 
+  buttonStatus = false;
+  bookingObj: Bookings = new Bookings;
   username : string ="User";
-  constructor() { }
+  constructor() {
+    this.bookingObj.Destination = "MUMBAI";
+  this.bookingObj.Source = "HYDERABAD";
+}
+myBookings()
+{
+  this.buttonStatus = true;
+}
+
 
   ngOnInit(): void {
 
 
   }
 
+}
+class Bookings {
+  Source: String | undefined;
+  Destination: String | undefined;
 }
