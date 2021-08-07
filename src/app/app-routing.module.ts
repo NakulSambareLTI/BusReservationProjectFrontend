@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ChangePasswordComponent } from './change-password/change-password.component';
-import { changePassword } from './change-password/changePassword';
-
 import { BookingsComponent } from './bookings/bookings.component';
 
 import { MyDashboardComponent } from './my-dashboard/my-dashboard.component';
@@ -12,8 +9,8 @@ const routes: Routes = [
   { path: 'dashboard', component: MyDashboardComponent},
 
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  {path: 'change-password',component:ChangePasswordComponent},
-  {path: 'seat-reservation',component:SeatReservationComponent}
+
+  {path: 'seat-reservation',component:SeatReservationComponent},
 
   { path: 'bookings', component: BookingsComponent},
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
