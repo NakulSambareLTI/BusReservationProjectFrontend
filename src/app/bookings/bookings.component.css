@@ -7,6 +7,9 @@ button.loginStyle
 
 .usernameStyle{
    color: aliceblue;
+   float: right;
+   position: absolute; right: 0;
+   margin-right: 1%;
 }
 
 .verticalNavStyle
@@ -52,7 +55,4 @@ button.loginStyle
 a:hover {
   background-color:#120E43;
 }
-.MyDashboard{
-        width: 500px;
-        margin: 0 auto;
-}
+

@@ -7,6 +7,7 @@ button.loginStyle
 
 .usernameStyle{
    color: aliceblue;
+
 }
 
 .verticalNavStyle
@@ -21,8 +22,8 @@ button.loginStyle
 
 .verticalStyle
 {
-  width: 15%;
-  height: 100%;
+  width: 25%;
+
   background-color: #2827CC;
 
 }
@@ -51,4 +52,11 @@ button.loginStyle
 
 a:hover {
   background-color:#120E43;
+}
+
+.MyDashboard{
+  width: 500px;
+  margin-right: 20%;
+  align-items: center;
+  justify-content: center;
 }
