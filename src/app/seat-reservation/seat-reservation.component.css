@@ -1,0 +1,30 @@
+.box {
+    float: left;
+    height: 20px;
+    width: 20px;
+    margin-bottom: 15px;
+    border: 1px solid black;
+    clear: both;
+  }
+  
+  .red {
+    background-color: red;
+  }
+  
+  .green {
+    background-color: green;
+  }
+  
+  .blue {
+    background-color: blue;
+  }
+  ul {
+    list-style: none;
+}
+ul.hor_menu li {
+  display: inline;
+  list-style-type: none;
+  border: 1px solid #000;
+  margin: 5px;
+  padding: 2px;
+}

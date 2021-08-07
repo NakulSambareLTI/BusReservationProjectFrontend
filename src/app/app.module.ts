@@ -8,10 +8,13 @@ import { MyDashboardComponent } from './my-dashboard/my-dashboard.component';
 
 import { FormsModule } from '@angular/forms';
 import { NgbModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
+import { SeatReservationComponent } from './seat-reservation/seat-reservation.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    MyDashboardComponent
+    MyDashboardComponent,
+    SeatReservationComponent,
   ],
   imports: [
     BrowserModule,
