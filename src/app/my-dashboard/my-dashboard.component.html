@@ -60,10 +60,14 @@
   <div class="MyDashboard">
       <h1 style="color: black">
           Up-Comming Bookings
+
       </h1>
-      <p>{{bookingObj.Source}} --> {{bookingObj.Destination}}</p>
-      <button type="button" class="btn btn-primary mr-5" href="#">Cancel</button>
-      <button type="button" class="btn btn-primary" href="#">Print</button>
+      <div *ngFor="let b of MyBookings">
+        <p style="margin-left: 1%;">{{b.Source}} --> {{b.Destination}}</p>
+        <button style="margin-left: 1%;" type="button" class="btn btn-primary mr-5" href="#">Cancel</button>
+        <button style="margin-left: 1%;" type="button" class="btn btn-primary" href="#">Print</button>
+      </div>
+
   </div>
 </div>
 

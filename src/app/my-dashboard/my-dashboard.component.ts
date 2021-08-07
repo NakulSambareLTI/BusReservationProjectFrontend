@@ -12,9 +12,17 @@ export class MyDashboardComponent implements OnInit {
   bookingObj: Bookings = new Bookings;
   username : string ="User";
   constructor() {
-    this.bookingObj.Destination = "MUMBAI";
-  this.bookingObj.Source = "HYDERABAD";
+
 }
+
+MyBookings : Bookings[]=[
+  { Destination : "MUMBAI",
+  Source : "HYDERABAD"},
+  { Destination : "Nagpur",
+  Source : "Chennai"},
+  { Destination : "MUMBAI",
+  Source : "Kochi"},
+];
 myBookings()
 {
   this.buttonStatus = true;
