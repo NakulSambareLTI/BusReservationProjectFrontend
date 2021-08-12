@@ -1,0 +1,212 @@
+<!--
+
+
+<nav class="navbar  navbar-dark bg-primary">
+  <form class="form-inline">
+    <div class="row">
+      <div class="col"> <a class="navbar-brand" href="#">Bus Reservation System</a></div>
+      <div class="col"><button type="button" class="btn btn-dark" (click)=openLogin()>Login</button></div>
+      <div class="col"><button type="button" class="btn btn-dark" (click)=openRegister() style="margin-left: 2%; width: 100px">Sign Up</button></div>
+    </div>
+
+
+
+  </form>
+</nav>
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/aboutus" routerLinkActive="active">About <span class="sr-only"></span></a>
+
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/termsofuse" routerLinkActive="active" >Terms of Use</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/contactus" routerLinkActive="active">Contact Us</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="container">
+    <div class="row col-md-8 col-md-offset-3 custyle">
+      <form action="" name="SearchForm" (ngSubmit)="checkData()">
+        <fieldset>
+            <legend class="text-center">Online Ticket Booking</legend>
+            <table>
+              <tr>
+                <th>
+                  From
+                </th>
+                <th>To</th>
+              </tr>
+              <tr>
+                <td>
+                  <select class="form-control" id="source"  name="sources" required [(ngModel)]="sourceChose" >
+                    <option  *ngFor="let l of locations">{{ l.name}}</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="form-control" id="destination" name="destinations" required  [(ngModel)]="destinationChosen">
+                    <option  *ngFor="let l1 of locations">{{ l1.name}}</option>
+                  </select>
+                </td>
+                <td>
+                  <div *ngIf="sameDestination;" #elseBlock><p style="color: red;">*Same Source and Destination not allowed</p></div>
+                  <ng-template #elseBlock></ng-template>
+                </td>
+              </tr>
+              <tr>
+                <th>Date of Journey</th>
+               <th>Date of Return(Optional)</th>
+              </tr>
+              <tr>
+                <td>
+                    <input class="form-control" type="date" name="dateOfJourney" id="dateOfJourney" required/><br>
+
+                </td>
+                <td>
+                    <input class="form-control" type="date" name="dateOfReturn" id="dateOfReturn" /><br>
+
+                </td>
+            </tr>
+
+            <tr>
+              <th>From Time</th>
+              <th>To Time</th>
+          </tr>
+          <tr>
+              <td>
+                  <input class="form-control" type="time" name="fromTime" id="fromTime" required/><br>
+              </td>
+              <td>
+                  <input class="form-control" type="time" name="toTime" id="toTime" required/><br>
+
+              </td>
+          </tr>
+            </table>
+            <div class="form-group text-center">
+              <input  class="btn btn-primary" type="submit" name="searchBus" value="Search Bus" >
+          </div>
+           </fieldset>
+
+           </form>
+
+
+    </div>
+  </div>
+</div>
+-->
+
+<nav class="navbar  navbar-dark bg-primary">
+  <form class="form-inline">
+    <a class="navbar-brand" href="#">Bus Reservation System</a>
+    <button type="button" class="btn btn-dark">Login/SignUp</button>
+  </form>
+</nav>
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/aboutus" routerLinkActive="active">About <span class="sr-only"></span></a>
+
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/termsofuse" routerLinkActive="active" >Terms of Use</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/contactus" routerLinkActive="active">Contact Us</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="container">
+    <div class="row col-md-8 col-md-offset-3 custyle">
+      <form action="" name="SearchForm" (ngSubmit)="checkData()">
+        <fieldset>
+            <legend class="text-center">Online Ticket Booking</legend>
+            <table>
+              <tr>
+                <th>
+                  From
+                </th>
+                <th>To</th>
+              </tr>
+              <tr>
+                <td>
+                  <select class="form-control" id="source"  name="sources" required [(ngModel)]="sourceChose" >
+                    <option  *ngFor="let l of locations">{{ l.name}}</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="form-control" id="destination" name="destinations" required  [(ngModel)]="destinationChosen">
+                    <option  *ngFor="let l1 of locations">{{ l1.name}}</option>
+                  </select>
+                </td>
+                <td>
+                  <div *ngIf="sameDestination;" #elseBlock><p style="color: red;">*Same Source and Destination not allowed</p></div>
+                  <ng-template #elseBlock></ng-template>
+                </td>
+              </tr>
+              <tr>
+                <th>Date of Journey</th>
+               <th>Date of Return(Optional)</th>
+              </tr>
+              <tr>
+                <td>
+                    <input class="form-control" type="date" name="dateOfJourney" id="dateOfJourney" [(ngModel)]="startDate"  required/><br>
+
+                </td>
+                <td>
+                    <input class="form-control" type="date" name="dateOfReturn" id="dateOfReturn" [(ngModel)]="endDate"  /><br>
+                </td>
+                <td>
+                  <div *ngIf="compareDate;" #elseBlock><p style="color: red;">*Date of Return is invalid...</p></div>
+                  <ng-template #elseBlock></ng-template>
+                </td>
+            </tr>
+
+
+            <tr>
+              <th>From Time</th>
+              <th>To Time</th>
+          </tr>
+          <tr>
+              <td>
+                  <input class="form-control" type="time" name="fromTime" id="fromTime"  [(ngModel)]="startTime" required/><br>
+              </td>
+              <td>
+                  <input class="form-control" type="time" name="toTime" id="toTime"  [(ngModel)]="endTime" required/><br>
+
+              </td>
+
+              <td>
+                <div *ngIf="compareTime;" #elseBlock><p style="color: red;">*Invalid End Time</p></div>
+                <ng-template #elseBlock></ng-template>
+              </td>
+          </tr>
+            </table>
+
+            <div *ngIf="checkAllRequiredFields;" #elseBlock><p style="color: red;">*All the fields are mandatory</p></div>
+            <ng-template #elseBlock></ng-template>
+
+            <div class="form-group text-center">
+              <input class="btn btn-primary" type="submit" name="searchBus" value="Search Bus" >
+          </div>
+           </fieldset>
+
+           </form>
+
+
+    </div>
+  </div>
+</div>

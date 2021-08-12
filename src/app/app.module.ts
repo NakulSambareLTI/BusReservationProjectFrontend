@@ -9,17 +9,41 @@ import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 
 import { NgbModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { BookingsComponent } from './bookings/bookings.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { HomeComponent } from './home/home.component';
+import { TermsofuseComponent } from './termsofuse/termsofuse.component';
+import { AboutComponent } from './about/about.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+import { WalletComponent } from './wallet/wallet.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SeatReservationComponent } from './seat-reservation/seat-reservation.component';
 @NgModule({
   declarations: [
     AppComponent,
     MyDashboardComponent,
-    BookingsComponent
+    BookingsComponent,
+    ChangePasswordComponent,
+    HomeComponent,
+    TermsofuseComponent,
+    AboutComponent,
+    ContactUsComponent,
+    FeedbackComponent,
+    WalletComponent,
+    RegisterComponent,
+    LoginComponent,
+    SeatReservationComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbAlertModule,
     FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
 
   ],
   providers: [],

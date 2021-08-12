@@ -1,0 +1,54 @@
+
+<div class="card cardStyle">
+  <h5 class="card-header" align="center">Register</h5>
+  <div class="card-body">
+    <!-- <form action="" name="changePasswordForm" (ngSubmit)="check()"> -->
+      <form action="" name="registerForm" [formGroup]="registerForm">
+      <div class="mb-3">
+          <label for="firstname"><b>First Name</b></label>
+        <input formControlName="firstname" type="text" name="firstname"
+        id="firstname" placeholder="Enter your First Name" required>
+      </div>
+
+      <div class="mb-3">
+          <label for="lastname"><b>Last Name</b></label>
+          <input formControlName="lastname" type="text" name="lastname"
+          id="lastname" placeholder="Enter your Last Name" required>
+      </div>
+
+
+      <div class="mb-3 ">
+          <label for="email"><b>Email</b></label>
+          <input formControlName="email" type="text"  name="email"
+          id="email" placeholder="Enter your valid Email"required>
+      </div>
+
+      <div class="mb-3 ">
+          <label for="pwd"><b>Password</b></label>
+        <input formControlName="pwd" type="password" name="pwd"
+        id="pwd"  placeholder="Enter your Password"required>
+      </div>
+
+
+      <div class="mb-3 ">
+          <label for="cpwd"><b>Confirm Password</b></label>
+        <input formControlName="cpwd" type="password" name="cpwd"
+        id="cpwd" placeholder="Confirm Password"required >
+      </div>
+
+      <div class="mb-3 ">
+          <label for="contactno"><b>Contact Number</b></label>
+          <input formControlName="contactno" type="tel" name="contactno"
+          id="contactno" placeholder="Enter your Contact Number"required>
+      </div>
+
+        <p align="center"><button type="submit" [disabled]="registerForm.invalid" class="btn btn-primary buttonCenter">Submit</button>
+        <button type="submit" class="btn btn-danger buttonCenter">Cancel</button></p>
+
+
+
+    </form>
+  </div>
+</div>
+
+

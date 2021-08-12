@@ -1,185 +1,30 @@
-<div class="container-fluid pt-5 mb-5">
-  <div class="row justify-content-center">
-    <div class="col-md-9">
-    <div class="seat_plan_wrap">
-      <div class="row">
-        <div class="col-md-6">
-          <h6>Select Seats</h6><br>
-          <div class="seats">
-            <div class="row1">
-              <ul class="hor_menu">
-                <li>
-                  <a (click)="Seat('S1')" id="S1" title="[S1]">
-                    <img src="./assets/img/fseat.png" alt="">
-                  </a>
-                </li>
-                <li>
-                  <a (click)="Seat('S2')" id="S2" title="[S2]">
-                    <img src="./assets/img/fseat.png" alt="">
-                  </a>
-                </li>
-                <li>
-                  <a title="[S3]" (click)="Seat('S3')" id="S3">
-                    <img src="./assets/img/fseat.png" alt="">
-                  </a>
-                </li>
-                <li>
-                  <a title="[S4]" (click)="Seat('S4')" id="S4">
-                    <img src="./assets/img/fseat.png" alt="">
-                  </a>
-                </li>
-                <li>
-                  <a title="[S5]" (click)="Seat('S5')" id="S5">
-                    <img src="./assets/img/fseat.png" alt="">
-                  </a>
-                </li>
-                <li>
-                  <a title="[S6]" (click)="Seat('S6')" id="S6">
-                    <img src="./assets/img/fseat.png" alt="">
-                  </a>
-                </li>
-                <li>
-                  <a title="[S7]" (click)="Seat('S7')" id="S7">
-                    <img src="./assets/img/fseat.png" alt="">
-                  </a>
-                </li>
-                <li>
-                  <a title="[S8]" (click)="Seat('S8')" id="S8">
-                    <img src="./assets/img/fseat.png" alt="">
-                  </a>
-                </li>
-                <li>
-                  <a title="[S9]" (click)="Seat('S9')" id="S9">
-                    <img src="./assets/img/fseat.png" alt="">
-                  </a>
-                </li>
-              </ul>
-            
-                <ul class="hor_menu">
-                  <li>
-                    <a (click)="Seat('S10')" id="S10" title="[S10]">
-                      <img src="./assets/img/fseat.png" alt="">
-                    </a>
-                  </li>
-                  <li>
-                    <a (click)="Seat('S11')" id="S11" title="[S11]">
-                      <img src="./assets/img/fseat.png" alt="">
-                    </a>
-                  </li>
-                  <li>
-                    <a title="[S12]" (click)="Seat('S12')" id="S12">
-                      <img src="./assets/img/fseat.png" alt="">
-                    </a>
-                  </li>
-                  <li>
-                    <a title="[S13]" (click)="Seat('S13')" id="S13">
-                      <img src="./assets/img/fseat.png" alt="">
-                    </a>
-                  </li>
-                  <li>
-                    <a title="[S14]" (click)="Seat('S14')" id="S14">
-                      <img src="./assets/img/fseat.png" alt="">
-                    </a>
-                  </li>
-                  <li>
-                    <a title="[S15]" (click)="Seat('S15')" id="S15">
-                      <img src="./assets/img/fseat.png" alt="">
-                    </a>
-                  </li>
-                  <li>
-                    <a title="[S16]" (click)="Seat('S16')" id="S16">
-                      <img src="./assets/img/fseat.png" alt="">
-                    </a>
-                  </li>
-                  <li>
-                    <a title="[S17]" (click)="Seat('S17')" id="S17">
-                      <img src="./assets/img/fseat.png" alt="">
-                    </a>
-                  </li>
-                  <li>
-                    <a title="[S18]" (click)="Seat('S18')" id="S18">
-                      <img src="./assets/img/fseat.png" alt="">
-                    </a>
-                  </li>
-                </ul>
+<p>seat-reservation works!</p>
+<table>
+  <tr *ngFor="let s of busSeatDetail" >
 
-                <ul class="hor_menu">
-                  <li>
-                    <a (click)="Seat('S19')" id="S19" title="[S19]">
-                      <img src="./assets/img/fseat.png" alt="">
-                    </a>
-                  </li>
-                  <li>
-                    <a (click)="Seat('S20')" id="S20" title="[S20]">
-                      <img src="./assets/img/fseat.png" alt="">
-                    </a>
-                  </li>
-                  <li>
-                    <a title="[S21]" (click)="Seat('S21')" id="S21">
-                      <img src="./assets/img/fseat.png" alt="">
-                    </a>
-                  </li>
-                  <li>
-                    <a title="[S22]" (click)="Seat('S22')" id="S22">
-                      <img src="./assets/img/fseat.png" alt="">
-                    </a>
-                  </li>
-                  <li>
-                    <a title="[S23]" (click)="Seat('S23')" id="S23">
-                      <img src="./assets/img/fseat.png" alt="">
-                    </a>
-                  </li>
-                  <li>
-                    <a title="[S24]" (click)="Seat('S24')" id="S24">
-                      <img src="./assets/img/fseat.png" alt="">
-                    </a>
-                  </li>
-                  <li>
-                    <a title="[S25]" (click)="Seat('S25')" id="S25">
-                      <img src="./assets/img/fseat.png" alt="">
-                    </a>
-                  </li>
-                  <li>
-                    <a title="[S26]" (click)="Seat('S26')" id="S26">
-                      <img src="./assets/img/fseat.png" alt="">
-                    </a>
-                  </li>
-                  <li>
-                    <a title="[S27]" (click)="Seat('S27')" id="S27">
-                      <img src="./assets/img/fseat.png" alt="">
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          <div *ngIf="alert"class="alert alert-danger ">You can buy only 4 seats at a time</div>
-        <div class="col-md-6 ">
-        <div class="seat_plan">
-          <table class="table ">
-            <thead>
-              <tr>
-                <th>Seats</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let s of showSeatList">
-                <td>{{s.seatNo}}</td>
-              </tr>
-            </tbody>
-          </table>
-        <!--</div>
-          <div class="total  bg-default">
-            <b>Total: {{total}}</b>
-          </div>--><br><br>
-          <div class="row ">
-            <button class="btn mt-3 ml-3 btn-primary btn-sm">Confirm</button>
-          </div>
-        </div>
+    <td>
+      <div *ngIf="s.reservation_id == null; else elseblock">
+        <button [class]="buttonststus" (click)=changeButtonStatus(s.seat_no)>{{s.seat_no}}</button>
+
       </div>
-    
-    </div>
-  </div>
-</div>
-</div>
-</div>
-</div>
+      <ng-template #elseblock>
+        <button [class]="reservedbuttonStatus" disabled>{{s.seat_no}}</button>
+      </ng-template>
+    </td>
+  </tr>
+</table>
+
+<h1>Seates Selected</h1>
+<table>
+<tr *ngFor="let selected of seates">
+ <td>
+ {{selected}}
+ </td>
+
+</tr>
+</table>
+<h2>
+  Total Cost : {{total}}
+</h2>
+
+<button type="button" class="btn btn-primary">Continue</button>
