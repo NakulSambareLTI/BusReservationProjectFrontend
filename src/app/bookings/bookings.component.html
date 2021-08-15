@@ -1,3 +1,9 @@
+<nav class="navbar  navbar-dark bg-primary">
+  <form class="form-inline">
+      <a class="navbar-brand" href="#" style="font-size: 25pt;">Bus Reservation System</a>
+      <button type="button" class="btn btn-dark loginStyle " style=" float: right;">Logout</button>
+  </form>
+</nav>
 <!--<nav class="navbar  navbar-dark bg-primary">
   <form class="form-inline">
     <a class="navbar-brand" href="#" style="font-size: 25pt;">Bus Reservation System</a>
@@ -48,6 +54,8 @@ nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
 </nav> -->
 <html>
   <body>
+    <div *ngIf="busJourneyDetails1==null;" #elseBlock><p style="color: red;">* No buses Found</p></div>
+    <ng-template #elseBlock></ng-template>
     <h1>Buses available</h1>
     <table *ngIf="busJourneyDetails1 && busJourneyDetails1.length" cellpadding="5px" cellspacing="5px" style="border: 1px solid black;border-collapse: collapse;">
       <thead>

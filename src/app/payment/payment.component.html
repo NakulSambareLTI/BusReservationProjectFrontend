@@ -1,0 +1,97 @@
+<nav class="navbar  navbar-dark bg-primary">
+  <form class="form-inline">
+      <a class="navbar-brand" href="#" style="font-size: 25pt;">Bus Reservation System</a>
+      <button type="button" class="btn btn-dark loginStyle " style=" float: right;">Logout</button>
+  </form>
+</nav>
+<div class="card cardStyle">
+  <h5 class="card-header" align="center">Payment</h5>
+  <div class="card-body">
+    <!--<p>CLick here to proceed with Wallet : &nbsp;&nbsp;&nbsp;&nbsp;
+      <button type="submit"  class="btn btn-primary buttonCenter" (click)=selectWalletPaymentOption()>Wallet</button></p>-->
+      <a  class="btn btn-primary stretched-link" (click)=selectWalletPaymentOption()>Pay With Wallet</a>
+      <div *ngIf="walletOption==true; else elseBlock">
+
+        <div class="row mb-3">
+          <label for="">Amount: &nbsp;&nbsp;
+          {{amountToBePayed}}</label>
+        </div>
+
+         <button  class="btn btn-primary buttonCenter"  >Pay</button>
+
+
+
+
+      </div>
+      <ng-template #elseBlock></ng-template>
+      <hr>
+
+  </div>
+
+</div>
+<div class="card cardStyle">
+  <h5 class="card-header" align="center">Pay with Card</h5>
+  <div class="card-body">
+
+    <form action="" name="paymentForm" (ngSubmit)="payWithCard()">
+
+
+      <p align="center">Pay with Netbanking </p>
+         <!-- <button type="submit"  class="btn btn-danger buttonCenter">NetBanking</button></p>-->
+
+
+
+    <div class="mb-3">
+    <label for="cname">Name on Card</label>
+    <input type="text" id="cname" name="cardname" placeholder="Name on Card"  [(ngModel)]=cardname>
+
+    </div>
+
+    <div class="mb-3">
+    <label for="ccnum">Credit card number</label>
+    <input type="text" id="ccnum" name="cardnumber" placeholder="Credit card number" required [(ngModel)]=cardnumber>
+    <!-- <div *ngIf="paymentForm.get('cardnumber').hasError('required')"
+    style="color: red;"> Please enter a valid Email-id
+    </div> -->
+    </div>
+
+
+    <div class="mb-3 ">
+    <label for="expmonth">Exp Month</label>
+    <input type="text" id="expmonth" name="expmonth" placeholder="Exp Month" required [(ngModel)]=expmonth>
+    <!-- <div *ngIf="paymentForm.get('expmonth').hasError('required')"
+    style="color: red;"> Please enter a valid Email-id
+    </div> -->
+    </div>
+
+    <div class="mb-3 ">
+    <label for="expyear">Exp Year</label>
+    <input type="text" id="expyear" name="expyear" placeholder="Exp Year" required [(ngModel)]=expyear>
+    <!-- <div *ngIf="paymentForm.get('expyear').hasError('required')"
+    style="color: red;"> Please enter a valid Email-id
+    </div> -->
+    </div>
+
+
+    <div class="mb-3 ">
+    <label for="cvv">CVV</label>
+    <input type="text" id="cvv" name="cvv" placeholder="CVV" required  [(ngModel)]=cvv>
+    <!-- <div *ngIf="paymentForm.get('cvv').hasError('required')"
+    style="color: red;"> Please enter a valid Email-id
+    </div> -->
+    </div>
+
+    <div class="mb-3 ">
+
+    </div>
+
+    <!--  <p align="center"><button type="submit"   class="btn btn-primary buttonCenter">Submit</button> -->
+    <p align="center">  <input type="submit" class="btn btn-primary buttonCenter" value="submit" name="" id=" "> <button type="submit"  class="btn btn-danger buttonCenter">Cancel</button></p>
+
+
+
+
+    </form>
+
+  </div>
+

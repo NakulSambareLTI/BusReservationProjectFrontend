@@ -114,8 +114,3 @@ export class HomeComponent implements OnInit {
   }
 
 }
-
-class cost_per_seat{
-  busno : string;
-  cost : number;
-}

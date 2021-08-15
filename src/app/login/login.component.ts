@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { BusServiceService } from '../bus-service.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,7 +8,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   loginForm:FormGroup;
-  constructor() { }
+  registeredEmailId:string;
+  password:string;
+  constructor(private service:BusServiceService) { }
 
   ngOnInit(): void {
     this.loginForm=new FormGroup({
@@ -16,4 +19,20 @@ export class LoginComponent implements OnInit {
     })
 
       }
+
+
+      checkValidLogin(){
+        let result=this.service.checkLogin(this.registeredEmailId,this.password);
+        result.subscribe(data=>{
+
+          if (data){
+            alert("Login detail matched");
+          }
+          else{
+            alert("Invalid Credentials");
+          }
+        });
+
+      }
+
 }

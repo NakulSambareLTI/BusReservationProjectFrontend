@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { BusJourneyDetails } from './models/BusJourneyDetails';
 import { BusSeatDetails } from './seat-reservation/BusSeatDetails';
 import { BusDetails } from './models/BusDetails';
+import { ReservationDetails } from './models/ReservationDetails';
 
 @Injectable({
   providedIn: 'root'
@@ -36,9 +37,27 @@ export class BookingsService {
   {
      return this.myHttp.get<any>(this.baseURL+"getBusDetails/"+busno);
   }
+
+  getUsersReservationDetails(email : string) : Observable<ReservationDetails[]>
+  {
+
+    return this.myHttp.get<ReservationDetails[]>(this.baseURL+"getReservationDetails/"+email);
+
+
+  }
+
+
+  getBusJourneyDetails(jid : number) : Observable<BusJourneyDetails>
+  {
+      return this.myHttp.get<BusJourneyDetails>(this.baseURL+"getBusJourneyDetails/"+jid);
+  }
+
+
+
   // getBusSeatDetailsByJourneyId(jid : number)
   // {
   //   return this.myHttp.get(this.baseURL+"getBusSeatesDetails/"+jid);
   // }
+   seatesSet  = new Set;
 
 }

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { BusServiceService } from '../bus-service.service';
+import { UserProfile } from './UserProfile';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -7,7 +10,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
   registerForm:FormGroup;
-  constructor() { }
+  //userName:string="";
+
+  userProfile : UserProfile=new UserProfile("","","","","",new Date());
+  constructor(private service:BusServiceService,private router  : Router ) { }
 
   ngOnInit(): void {
     this.registerForm=new FormGroup({
@@ -20,4 +26,17 @@ export class RegisterComponent implements OnInit {
     })
 
       }
+
+      registerUser(){
+        console.log('registerUser');
+        console.log(this.userProfile.userName);
+        console.log(this.userProfile.registeredEmail);
+        console.log(this.userProfile.phoneNumber);
+        console.log(this.userProfile.password);
+        console.log(this.userProfile.gender);
+        console.log(this.userProfile.dateOfBirth);
+        this.service.registerUser(this.userProfile).subscribe();
+        this.router.navigate(['/home']);
+      }
 }
+

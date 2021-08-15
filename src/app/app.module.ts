@@ -20,6 +20,10 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SeatReservationComponent } from './seat-reservation/seat-reservation.component';
+import { PaymentComponent } from './payment/payment.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { AdminOperationsComponent } from './admin-operations/admin-operations.component';
+import { CancelReservationComponent } from './cancel-reservation/cancel-reservation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +39,10 @@ import { SeatReservationComponent } from './seat-reservation/seat-reservation.co
     RegisterComponent,
     LoginComponent,
     SeatReservationComponent,
+    PaymentComponent,
+    AdminLoginComponent,
+    AdminOperationsComponent,
+    CancelReservationComponent,
 
   ],
   imports: [

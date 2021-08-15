@@ -1,26 +1,27 @@
-<p>login works!</p>
+
+
 <div class="card cardStyle">
-  <h5 class="card-header" align="center">Login</h5>
+  <h5 class="card-header" align="center">Admin Login</h5>
   <div class="card-body">
     <!-- <form action="" name="loginForm" (ngSubmit)="check()"> -->
-      <form action="" [formGroup]="loginForm" (ngSubmit)="checkValidLogin()">
+      <form action="" [formGroup]="adminLoginForm" (ngSubmit)="checkValidAdminLogin()">
       <div class="mb-3">
         <label for="email"><b>Email</b></label>
           <input formControlName="email" type="email"
-          id="email" placeholder="E-mail" [(ngModel)]="registeredEmailId" />
+          id="email" placeholder="E-mail" [(ngModel)]="registeredAdminEmailId" />
 
           <!-- <div id="id1" *ngIf="loginForm.get('email').hasError('required')"
           style="color: red;"> Email is a required field
           </div> -->
 
-          <div id="id2" *ngIf="loginForm.get('email').hasError('pattern')"
+          <div id="id2" *ngIf="adminLoginForm.get('email').hasError('pattern')"
           style="color: red;"> Enter a Valid Email
           </div>
       </div>
       <div class="mb-3">
         <label for="pwd"><b>Password</b></label>
           <input formControlName="pwd" type="password"
-          name="pwd" id="password" placeholder="Password" [(ngModel)]="password"/>
+          name="pwd" id="password" placeholder="Password" [(ngModel)]="adminPassword"/>
 
          <!-- <div id="id3" *ngIf="loginForm.get('pwd').hasError('required')"
          style="color: red;"> Password is a required field
@@ -42,3 +43,9 @@
     </form>
   </div>
 </div>
+
+
+ <!-- <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Email address</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+</div> -->

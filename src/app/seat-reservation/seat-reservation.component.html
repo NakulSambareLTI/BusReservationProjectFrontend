@@ -1,9 +1,14 @@
-<p>seat-reservation works!</p>
+<nav class="navbar  navbar-dark bg-primary">
+  <form class="form-inline">
+      <a class="navbar-brand" href="#" style="font-size: 25pt;">Bus Reservation System</a>
+      <button type="button" class="btn btn-dark loginStyle " style=" float: right;">Logout</button>
+  </form>
+</nav>
 <table>
   <tr *ngFor="let s of busSeatDetail" >
 
     <td>
-      <div *ngIf="s.reservation_id == null; else elseblock">
+      <div *ngIf="s.reservation_id == 0; else elseblock">
         <button [class]="buttonststus" (click)=changeButtonStatus(s.seat_no)>{{s.seat_no}}</button>
 
       </div>
@@ -27,4 +32,4 @@
   Total Cost : {{total}}
 </h2>
 
-<button type="button" class="btn btn-primary">Continue</button>
+<button type="button" class="btn btn-primary" (click)=gotoPaymentSection()>Continue</button>

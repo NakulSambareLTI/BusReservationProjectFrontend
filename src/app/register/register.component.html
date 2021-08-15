@@ -1,48 +1,66 @@
 
 <div class="card cardStyle">
   <h5 class="card-header" align="center">Register</h5>
-  <div class="card-body">
+  <div class="card-body" >
     <!-- <form action="" name="changePasswordForm" (ngSubmit)="check()"> -->
-      <form action="" name="registerForm" [formGroup]="registerForm">
-      <div class="mb-3">
+      <form action="" name="registerForm"  (ngSubmit)="registerUser()">
+      <div class="mb-3" [formGroup]="registerForm">
           <label for="firstname"><b>First Name</b></label>
         <input formControlName="firstname" type="text" name="firstname"
-        id="firstname" placeholder="Enter your First Name" required>
+        id="firstname" placeholder="Enter your First Name"  [(ngModel)]="userProfile.userName"  required>
       </div>
 
-      <div class="mb-3">
+      <div class="mb-3" [formGroup]="registerForm">
           <label for="lastname"><b>Last Name</b></label>
           <input formControlName="lastname" type="text" name="lastname"
           id="lastname" placeholder="Enter your Last Name" required>
       </div>
 
+      <div class="mb-3" >
+        <label for="dob"><b>Date of Birth</b></label>
+        <input  type="date" name="dob"
+        id="dob" placeholder="Enter your Date of Birth" [(ngModel)]="userProfile.dateOfBirth" required>
+    </div>
 
-      <div class="mb-3 ">
+    <div class="mb-3">
+      <label ><b>Gender</b></label>
+      <input type="radio" id="male" name="gender" value="M" [(ngModel)]="userProfile.gender" required>Male
+      <!-- <label for="male">Male</label><br> -->
+      <input type="radio" id="female" name="gender" value="F" [(ngModel)]="userProfile.gender" required>Female
+      <!-- <label for="female">Female</label> -->
+    </div>
+
+
+
+
+
+
+      <div class="mb-3 " [formGroup]="registerForm">
           <label for="email"><b>Email</b></label>
           <input formControlName="email" type="text"  name="email"
-          id="email" placeholder="Enter your valid Email"required>
+          id="email" placeholder="Enter your valid Email" [(ngModel)]="userProfile.registeredEmail" required>
       </div>
 
-      <div class="mb-3 ">
+      <div class="mb-3 " [formGroup]="registerForm">
           <label for="pwd"><b>Password</b></label>
         <input formControlName="pwd" type="password" name="pwd"
-        id="pwd"  placeholder="Enter your Password"required>
+        id="pwd"  placeholder="Enter your Password" [(ngModel)]="userProfile.password" required>
       </div>
 
 
-      <div class="mb-3 ">
+      <div class="mb-3 " [formGroup]="registerForm">
           <label for="cpwd"><b>Confirm Password</b></label>
         <input formControlName="cpwd" type="password" name="cpwd"
         id="cpwd" placeholder="Confirm Password"required >
       </div>
 
-      <div class="mb-3 ">
+      <div class="mb-3 " [formGroup]="registerForm">
           <label for="contactno"><b>Contact Number</b></label>
           <input formControlName="contactno" type="tel" name="contactno"
-          id="contactno" placeholder="Enter your Contact Number"required>
+          id="contactno" placeholder="Enter your Contact Number" [(ngModel)]="userProfile.phoneNumber" required>
       </div>
 
-        <p align="center"><button type="submit" [disabled]="registerForm.invalid" class="btn btn-primary buttonCenter">Submit</button>
+        <p align="center"><button type="submit"  class="btn btn-primary buttonCenter"   >Submit</button>
         <button type="submit" class="btn btn-danger buttonCenter">Cancel</button></p>
 
 

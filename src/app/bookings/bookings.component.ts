@@ -4,7 +4,7 @@ import { BookingsService } from '../bookings.service';
 import { BusJourneyDetails } from '../models/BusJourneyDetails';
 import { UserSelections } from '../models/UserSelections';
 import { BusDetails } from '../models/BusDetails';
-import { stringify } from 'querystring';
+
 @Component({
   selector: 'app-bookings',
   templateUrl: './bookings.component.html',

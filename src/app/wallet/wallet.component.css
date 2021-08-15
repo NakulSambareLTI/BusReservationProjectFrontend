@@ -1,16 +1,45 @@
-.buttonCenter
-{
- margin: 2%;
+
+
+.button{
+  background-color: green;
+  border-radius: 8px;
+  margin: 2%;
 }
 
-.inputStyle{
-  width: 100%;
+.cancel{
+  background-color: red;
+  border-radius: 8px;
+  margin: 2%;
 }
-.cardStyle
-{
-  width: 40%;
-  margin: 0 auto; /* Added */
-  float: none; /* Added */
-  margin-bottom: 10px; /* Added */
-  margin-top: 5%;
-}
+
+   .inputStyle{
+     width: 100%;
+   }
+   /*.cardStyle
+   {
+     width: 50%;
+     margin: 0 auto; /* Added
+     float: none; /* Added
+     margin-bottom: 10px; /* Added
+     margin-top: 5%;
+
+      border: 2px solid lightgray;
+      border-radius: 10px;
+
+   } */
+
+   .cardStyle {
+    background-color: white;
+    width: 300px;
+    border: 2px solid lightgray;
+    padding: 50px;
+    margin: 20px;
+  }
+
+  .card-title{
+    font-size: 30px;
+  }
+
+  .card-header{
+    font-size: 30px;
+  }

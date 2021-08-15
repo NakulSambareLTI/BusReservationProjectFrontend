@@ -1,93 +1,117 @@
+<p>wallet works!</p>
+<p>Customer Wallet</p>
+
 <div class="card text-center">
-  <div class="card-header">
-    <ul class="nav nav-pills card-header-pills">
-      <li class="nav-item buttonCenter">
-        <button type="button" class="btn btn-primary" (click)="walletDescriptionMethod()">Wallet</button>
+    <div class="card-header">
+        <ul class="nav nav-pills card-header-pills">
 
-      </li>
-      <li class="nav-item buttonCenter">
-        <button type="button" class="btn btn-primary " (click)=" createWalletMethod()">Create a Wallet</button>
+            <!--   <button type="submit" (click)="greet()">Greet</button>
+            {{this.temp}} -->
 
-      </li>
-      <li class="nav-item buttonCenter">
-        <button type="button" class="btn btn-primary " (click)="addMoneytMethod()">Add Money</button>
+            <li class="nav-item buttonCenter">
+                <button type="button" class="btn btn-primary" (click)="walletDescriptionMethod()">Wallet</button>
 
-      </li>
-    </ul>
-  </div>
-  <div>
-    <div class="card cardStyle"  *ngIf="walletDescription; else numElseBlock2">
-      <h5 class="card-title">Wallet Description </h5>
-      <p>The wallet will help you to book a ticket and after you cancel the ticket the money will be transferred to your accpunt</p>
+            </li>
+            <li class="nav-item buttonCenter">
+                <button type="button" class="btn btn-primary " (click)=" createWalletMethod()">Create a Wallet</button>
+
+            </li>
+            <li class="nav-item buttonCenter">
+                <button type="button" class="btn btn-primary " (click)="addMoneytMethod()">Add Money</button>
+
+            </li>
+        </ul>
     </div>
-    <ng-template #numElseBlock2>
-      <div class="card cardStyle"  *ngIf="createWallet; else numElseBlock3">
-        <h5 class="card-header" align="center">Create a wallet</h5>
-  <div class="card-body" align="center">
-    <form action="" name="changePasswordForm" >
-
-      <div class="mb-3" align="left">
-        <label for="exampleInputEmail1" class="form-label">Enter Email</label>
-        <input type="email" class="form-control inputStyle" id="exampleInputEmail1" required name="email" aria-describedby="emailHelp">
-
-      </div>
-      <div class="mb-3" align="left">
-        <label for="walletPin" class="form-label"> Enter Pin</label>
-        <input type="password" name="walletpin" required class="form-control inputStyle" id="walletpin" >
-      </div>
-      <div class="mb-3" align="left">
-        <label for="walletPin" class="form-label"> Confirm Pin</label>
-        <input type="password" name="walleConfirmtpin" required class="form-control inputStyle" id="walletConfirmpin" >
-      </div>
-
-
-        <p align="center"><button type="submit" class="btn btn-primary buttonCenter">Submit</button>
-        <button type="submit" class="btn btn-danger buttonCenter">Cancel</button></p>
-
-
-
-    </form>
-  </div>
+    <div>
+        <div class="card cardStyle" *ngIf="walletDescription; else numElseBlock2">
+            <h5 class="card-title">Wallet Description </h5>
+            <p>The wallet will help you to book a ticket and after you cancel the ticket the money will be transferred
+                to your accpunt</p>
         </div>
-       </ng-template>
-       <ng-template #numElseBlock3>
-        <div class="card cardStyle"  *ngIf="addMoney; else numElseBlock4">
-          <h5 class="card-header" align="center">Add Money</h5>
-          <div class="card-body" align="center">
-            <form action="" name="changePasswordForm" >
+        <ng-template #numElseBlock2>
 
-              <div class="mb-3" align="left">
-                <label for="exampleInputEmail1" class="form-label">Enter Email</label>
-                <input type="email" class="form-control inputStyle" id="exampleInputEmail1" required name="email" aria-describedby="emailHelp">
+            <div class="card cardStyle" *ngIf="createWallet; else numElseBlock3">
+                <h5 class="card-header" align="center">Create a wallet</h5>
+                <div class="card-body" align="center">
+                    <form action="" name="changePasswordForm">
 
-              </div>
-              <div class="mb-3" align="left">
-                <label for="walletPin" class="form-label"> Enter Pin</label>
-                <input type="password" name="walletpin" required class="form-control inputStyle" id="walletpin" >
-              </div>
-              <div class="mb-3" align="left">
-                <label for="walletPin" class="form-label"> Enter Amount</label>
-                <input type="number" name="walleamount" required class="form-control inputStyle" id="walletamount" >
-              </div>
+                        <div class="mb-3" align="left">
+                            <label for="exampleInputEmail1" class="form-label">Enter Email</label>
+                            <input type="email" class="form-control inputStyle" id="exampleInputEmail1" required
+                                name="email" aria-describedby="emailHelp" [(ngModel)]="walletobj.registeredEmail">
 
 
-                <p align="center"><button type="submit" class="btn btn-primary buttonCenter">Submit</button>
-                <button type="submit" class="btn btn-danger buttonCenter">Cancel</button></p>
+                        </div>
+                        <div class="mb-3" align="left">
+                            <label for="walletPin" class="form-label"> Enter Pin</label>
+                            <input type="password" name="walletpin" required class="form-control inputStyle"
+                                id="walletpin" [(ngModel)]="walletobj.walletPin">
+                        </div>
+                        <div class="mb-3" align="left">
+                            <label for="walletPin" class="form-label"> Confirm Pin</label>
+                            <input type="password" name="walletconfrimpin" required class="form-control inputStyle"
+                                id="walletconfirmpin">
+                        </div>
+
+
+                        <p align="center"><button type="submit" class="button" (click)="persistWallet()">Submit</button>
+                            <button type="button" class="cancel">Cancel</button>
+                        </p>
 
 
 
-            </form>
-          </div>
-        </div>
+                    </form>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template #numElseBlock3>
+            <div class="card cardStyle" *ngIf="addMoney; else numElseBlock4">
+                <h5 class="card-header" align="center">Add Money</h5>
+                <div class="card-body" align="center">
+                    <form action="" name="changePasswordForm">
 
-         </ng-template>
-         <ng-template #numElseBlock4>
+                        <div class="mb-3" align="left">
+                            <label for="exampleInputEmail1" class="form-label">Enter Email</label>
+                            <input type="email" class="form-control inputStyle" id="exampleInputEmail1" required
+                                name="email" aria-describedby="emailHelp" [(ngModel)]="walletobj.registeredEmail">
+
+                        </div>
+                        <div class="mb-3" align="left">
+                            <label for="walletPin" class="form-label"> Enter Pin</label>
+                            <input type="password" name="walletpin" required class="form-control inputStyle"
+                                id="walletpin" [(ngModel)]="walletobj.walletPin">
+                        </div>
+                        <div class="mb-3" align="left">
+                            <label for="walletPin" class="form-label"> Enter Amount</label>
+                            <input type="number" name="walleamount" required class="form-control inputStyle"
+                                id="walletamount" [(ngModel)]="walletobj.walletAmount">
+                        </div>
+
+
+                        <p align="center">
+                            <button type="button" class="button" (click)="addAmount()">Submit</button>
+                            <button type="button" class="cancel">Cancel</button>
+                        </p>
+
+
+
+
+                    </form>
+                </div>
+            </div>
+
+        </ng-template>
+        <ng-template #numElseBlock4>
 
             <h5 class="card-title">Wallet Description</h5>
 
-            <p>The wallet will help you to book a ticket and after you cancel the ticket the money will be transferred to your accpunt</p>
+            <p>The wallet will help you to book a ticket and after you cancel the ticket the money will be transferred
+                to your accpunt</p>
 
-           </ng-template>
+        </ng-template>
 
-  </div>
+    </div>
 
+    <!--  <div>
+        <h1>{{wallet.registeredEmail}}</h1>
+    </div>  -->

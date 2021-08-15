@@ -25,7 +25,7 @@ export class SeatReservationComponent implements OnInit {
   cost_per_seat : number=200;
   busNo :string;
   busDetails : BusDetails;
-
+  seates = new Set();
   constructor(private router  : Router,private bookingsService :BookingsService)  {
     this.temp1=sessionStorage.getItem("busjourneyDetails");
     this.journeyId=JSON.parse(this.temp1);
@@ -162,7 +162,7 @@ export class SeatReservationComponent implements OnInit {
 
      buttonststus : string="unselected";
      reservedbuttonStatus : string="selected";
-      seates = new Set();
+
 
      changeButtonStatus(seatno : string)
      {
@@ -174,17 +174,24 @@ export class SeatReservationComponent implements OnInit {
       //   this.buttonststus=="unselected"
       // }
 
-     this.total= this.total+this. cost_per_seat;
+     this.total= this. cost_per_seat*this.seates.size;
 
 
      }
-
-
 
      costPerSeat : number;
  busType : string;
   selectBusDetails()
    {
 
+  }
+
+  gotoPaymentSection()
+  {
+    sessionStorage.setItem("amountToPay",JSON.stringify(this.total));
+    sessionStorage.setItem("journeyIdForPayment",JSON.stringify(this.journeyId));
+    sessionStorage.setItem("seatesSelectedByUser",JSON.stringify(this.seates));
+    this.bookingsService.seatesSet=this.seates;
+    this.router.navigate(['/payment']);
   }
   }

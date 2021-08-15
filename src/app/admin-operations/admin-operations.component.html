@@ -1,0 +1,38 @@
+<!-- The sidebar -->
+<div class="sidebar">
+  <a (click)="toogleHome()">Home</a>
+  <a (click)="toogleUr()">Update Route</a>
+  <a (click)="toogleAdd()">Add Bus</a>
+</div>
+
+<div class="content">
+    <ng-container *ngIf="home">
+        hello home
+    </ng-container>
+
+    <ng-container *ngIf="ur">
+      <form (ngSubmit)="updateRoute()">
+          <input type="text" placeholder="Enter Journey No"  name="jno" [(ngModel)]="journeyNo"/><br>
+          <input type="text" placeholder="Enter New Source" name="newSourcs" [(ngModel)]="newSource"/><br>
+          <input type="text" placeholder="Enter New Destination" name="newDestination" [(ngModel)]="newDestination"/><br>
+          <input type="submit" value="Submit" />
+      </form>
+    </ng-container>
+
+    <ng-container *ngIf="ab">
+      <form (ngSubmit)="addBus()">
+          <input type="text" placeholder="Enter Bus No"  name="busno" [(ngModel)]="busDetails.bus_no"/><br>
+
+          <input type="text" placeholder="Enter Bus type"  name="deptTime" [(ngModel)]="busDetails.bus_type"/><br>
+
+          <input type="text" placeholder="Number of seats"  name="arivlTime" [(ngModel)]="busDetails.no_of_seates"/><br>
+
+          <input type="text" placeholder="Enter Driver Id" name="source" [(ngModel)]= "busDetails.driver_id" /><br>
+
+          <input type="text" placeholder="Enter  Travels Name" name="dest" [(ngModel)]= "busDetails.travels_name" /><br>
+
+          <input type="text" placeholder="Cost per Seat" name="destination" [(ngModel)]="busDetails.cost_per_seat"/><br>
+          <input type="submit" value="Submit" />
+      </form>
+    </ng-container>
+</div>

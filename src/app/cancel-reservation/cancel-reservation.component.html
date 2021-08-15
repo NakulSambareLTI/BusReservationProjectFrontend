@@ -1,0 +1,22 @@
+<h5 class="card-header" align="center">Cancel Reservation</h5>
+  <div class="card-body" align="center">
+    <form action="" name="cancelReservationForm" (ngSubmit)="cancelreservationcomponent()">
+
+      <div class="mb-3" align="left">
+        <label for="exampleInputEmail1" class="form-label">Enter Email</label>
+        <input type="text" class="form-control inputStyle" id="exampleInputEmail1" required name="email" aria-describedby="emailHelp" [(ngModel)]=email>
+
+      </div>
+      <div class="mb-3" align="left">
+        <label for="jID" class="form-label"> Enter Journey ID</label>
+        <input type="text" name="journeyID" required class="form-control inputStyle" id="jID" [(ngModel)]=jID>
+      </div>
+      <div class="mb-3" align="left">
+        <label for="rID" class="form-label"> Enter Reservation ID</label>
+        <input type="text" name="reservationID" required class="form-control inputStyle" id="rID" [(ngModel)]=rID>
+      </div>
+
+
+        <p align="center"><button type="submit" class="btn btn-primary buttonCenter">Submit</button>
+        <button type="submit" class="btn btn-danger buttonCenter">Cancel</button></p>
+    </form>

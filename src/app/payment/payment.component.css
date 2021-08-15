@@ -1,0 +1,22 @@
+.cardStyle
+{
+  width: 40%;
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+  margin-top: 5%;
+}
+
+.buttonCenter
+{
+ margin: 2%;
+}
+
+label{
+  cursor: pointer;
+  display: inline-block;
+  padding: 3px 6px;
+  text-align: right;
+  width: 150px;
+  vertical-align: top;
+}
