@@ -26,4 +26,18 @@ export class WalletService {
     return this.myhttp.post<any>(this.baseURL + "addBalance", cWallet);
   }
 
+wallet : Wallet = new Wallet();
+  procesWalletPayment(wallet : Wallet): Observable<any>
+  {
+
+
+    console.log("process payment");
+    return this.myhttp.post<any>(this.baseURL +"processWalletPayment",wallet);
+  }
+
 }
+
+
+
+
+

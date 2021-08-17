@@ -20,12 +20,14 @@ export class WalletComponent implements OnInit {
 
   walletobj: Wallet = new Wallet();
 
-
+  userEmail : string;
   constructor(private custWalletservice: WalletService) {
     /*  this.walletobj.registeredEmail = "";
       this.walletobj.walletPin = "";
       this.walletobj.walletAmount = 0;
      */
+      this.userEmail = sessionStorage.getItem('userKey');
+      console.log("User email",this.userEmail);
   }
 
   walletDescriptionMethod() {
@@ -39,20 +41,22 @@ export class WalletComponent implements OnInit {
     this.createWallet = true;
     this.addMoney = false;
   }
-
+ confirmPin : string;
 
   persistWallet() {
-    console.log('in persist');
-
-
-    this.custWalletservice.createWallet(this.walletobj).subscribe(data => console.log(data), error => console.log(error));
-
-
+    if (this.confirmPin == this.walletobj.walletPin) {
+      console.log('in persist');
+      this.custWalletservice.createWallet(this.walletobj).subscribe(data => console.log(data), error => console.log(error));
+    }
+    else {
+      console.log('Please enter the same pin in both the feilds');
+    }
   }
 
   addAmount() {
     console.log('in add amount');
     this.custWalletservice.addBalance(this.walletobj).subscribe(data => console.log(data), error => console.log(error));
+      alert("Money added to your wallet")
   }
 
   addMoneytMethod() {

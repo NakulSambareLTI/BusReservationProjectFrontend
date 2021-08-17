@@ -1,7 +1,7 @@
 <nav class="navbar  navbar-dark bg-primary">
   <form class="form-inline">
       <a class="navbar-brand" href="#" style="font-size: 25pt;">Bus Reservation System</a>
-      <button type="button" class="btn btn-dark loginStyle " style=" float: right;">Logout</button>
+      <button type="button" class="btn btn-dark loginStyle " style=" float: right;" (click)="logout()">Logout</button>
   </form>
 </nav>
 <div class="card cardStyle">
@@ -17,7 +17,7 @@
           {{amountToBePayed}}</label>
         </div>
 
-         <button  class="btn btn-primary buttonCenter"  >Pay</button>
+         <button  class="btn btn-primary buttonCenter"  (click)="seatReservation()" >Pay</button>
 
 
 
@@ -95,3 +95,8 @@
 
   </div>
 
+<div>
+  <input type="text" [(ngModel)]=userPin placeholder="enter pin" >
+  <button  class="btn btn-primary buttonCenter"  (click)="deductAmt()" >Pay</button>
+  <button  class="btn btn-primary buttonCenter"  (click)="seatReservation()" >Submit</button>
+</div>

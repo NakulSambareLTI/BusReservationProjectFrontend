@@ -24,6 +24,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminOperationsComponent } from './admin-operations/admin-operations.component';
 import { CancelReservationComponent } from './cancel-reservation/cancel-reservation.component';
+import { DatePipe } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +55,9 @@ import { CancelReservationComponent } from './cancel-reservation/cancel-reservat
     HttpClientModule,
 
   ],
-  providers: [],
+  providers: [
+    DatePipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

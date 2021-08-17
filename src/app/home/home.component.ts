@@ -64,8 +64,9 @@ export class HomeComponent implements OnInit {
     { name: "Nagpur", value: 1 },
     { name: "Bangalore", value: 2 },
     { name: "Mumbai", value: 3 },
-    { name: "Chennai", value: 3 },
-    { name: "Delhi", value: 3 }
+    { name: "Chennai", value: 4 },
+    { name: "Delhi", value: 5 },
+    {name : "Kolkata",Value : 6}
   ]
   //locations : String []=["Nagpur","Mumbai","Delhi","Banglore","Chennai","Hydrabad"]
   sameDestination : boolean = false;
@@ -78,7 +79,7 @@ export class HomeComponent implements OnInit {
   endTime:Time;
   compareTime :boolean=false;
   checkAllRequiredFields:boolean=false;
-
+  userEmail : string;
 
 
   checkData()
@@ -110,7 +111,10 @@ export class HomeComponent implements OnInit {
       this.router.navigate(['/bookings']);
     }
   }
+
   ngOnInit(): void {
+    this.userEmail = sessionStorage.getItem('userKey');
+    console.log("User email",this.userEmail);
   }
 
 }

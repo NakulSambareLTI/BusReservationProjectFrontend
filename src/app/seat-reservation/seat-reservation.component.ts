@@ -12,6 +12,7 @@ import { BusDetails } from '../models/BusDetails';
 })
 export class SeatReservationComponent implements OnInit {
   showSeatList:Seat[]=[];
+  userEmail : string;
   busSeatDetail : BusSeatDetails[]=[];
   total=0;
   fillupSeat=[];
@@ -38,6 +39,8 @@ export class SeatReservationComponent implements OnInit {
     //this.busNo=this.busNo;
     //this.journeyId=this.busJourneyDetails.journeyID;
     console.log("Bus journey id", this.journeyId);
+    this.userEmail = sessionStorage.getItem('userKey');
+    console.log("User email",this.userEmail);
   }
 
   ngOnInit(): void {
@@ -191,7 +194,13 @@ export class SeatReservationComponent implements OnInit {
     sessionStorage.setItem("amountToPay",JSON.stringify(this.total));
     sessionStorage.setItem("journeyIdForPayment",JSON.stringify(this.journeyId));
     sessionStorage.setItem("seatesSelectedByUser",JSON.stringify(this.seates));
-    this.bookingsService.seatesSet=this.seates;
+     this.bookingsService.seatesSet=this.seates;
     this.router.navigate(['/payment']);
+  }
+
+  logout()
+  {
+    console.log("logging out the user");
+    this.router.navigate(['/home']);
   }
   }

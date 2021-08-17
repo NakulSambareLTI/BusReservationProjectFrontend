@@ -15,11 +15,15 @@ export class BookingsComponent implements OnInit {
 listForUsers : BusJourneyDetails[]=[];
   usersChoices : UserSelections;
   busDetails : BusDetails;
+  userEmail : string;
   temp : any;
   username : string ="User";
   constructor(private router  : Router,private bookingsService :BookingsService) {
     this.temp=sessionStorage.getItem("userSelections");
     this.usersChoices=JSON.parse(this.temp);
+    this.userEmail = sessionStorage.getItem('userKey');
+    console.log("User email",this.userEmail);
+
   }
 
   // Travels</th>
@@ -101,6 +105,7 @@ bookSeates(bus : BusJourneyDetails)
    this.journey_id=bus.journeyID;
    // sessionStorage.setItem("busno_selected",JSON.stringify(this.bus_no));
     sessionStorage.setItem("busjourneyDetails",JSON.stringify(bus.journeyID));
+    sessionStorage.setItem("DepartureDate",JSON.stringify(bus.departure_date));
     sessionStorage.setItem("busNoDetails",JSON.stringify(bus.bus_no));
 
     this.router.navigate(['/seat-reservation']);
@@ -126,14 +131,11 @@ bookSeates(bus : BusJourneyDetails)
     this.busType=this.busDetails.bus_type;
     console.log(this.busDetails);
   }
-
+  logout()
+  {
+    console.log("logging out the user");
+    this.router.navigate(['/home']);
+  }
 }
-// class AvailableBuses
-// {
-//   travels : String|undefined;
-//   depart : String | undefined;
-//   arival : String | undefined;
-//   seates : String | undefined;
-//   fare : number | undefined;
-// }
+
 

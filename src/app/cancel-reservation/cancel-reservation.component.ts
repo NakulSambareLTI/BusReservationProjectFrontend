@@ -13,8 +13,10 @@ export class CancelReservationComponent implements OnInit {
   jID:number;
   errorMessage: any;
   response: any;
+  userEmail : string;
   loading: boolean = false;
-  constructor(private router  : Router,private cancelReservationService :CancelReservationService) {}
+  constructor(private router  : Router,private cancelReservationService :CancelReservationService) {this.userEmail = sessionStorage.getItem('userKey');
+  console.log("User email",this.userEmail);}
 
   ngOnInit(): void {
   }
@@ -25,6 +27,7 @@ export class CancelReservationComponent implements OnInit {
         console.log('response received')
         console.log(response)
         this.response = response;
+
       },
       (error) => {                              //error() callback
         console.error('Request failed with error')
@@ -36,6 +39,12 @@ export class CancelReservationComponent implements OnInit {
         this.loading = false;
       })
 
+
+  }
+  logout()
+  {
+    console.log("logging out the user");
+    this.router.navigate(['/home']);
   }
 
 }

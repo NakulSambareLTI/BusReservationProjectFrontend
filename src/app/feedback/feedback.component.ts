@@ -6,8 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./feedback.component.css']
 })
 export class FeedbackComponent implements OnInit {
-
-  constructor() { }
+  userEmail : string;
+  constructor() { this.userEmail = sessionStorage.getItem('userKey');
+  console.log("User email",this.userEmail);}
 
   ngOnInit(): void {
   }

@@ -51,12 +51,14 @@ export class AdminOperationsComponent implements OnInit {
   updateRoute()
   {
     this.service.updateRoute(this.journeyNo,this.newSource,this.newDestination).subscribe();
-
+    alert("Bus route updated successfully");
   }
 
   addBus()
   {
     this.service.addBus(this.busDetails).subscribe();
+    alert("Bus Added successfully");
+
   }
 
 }

@@ -36,7 +36,7 @@ export class RegisterComponent implements OnInit {
         console.log(this.userProfile.gender);
         console.log(this.userProfile.dateOfBirth);
         this.service.registerUser(this.userProfile).subscribe();
-        this.router.navigate(['/home']);
+        this.router.navigate(['/login']);
       }
 }
 

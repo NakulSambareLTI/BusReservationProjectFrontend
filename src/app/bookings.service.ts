@@ -5,6 +5,10 @@ import { BusJourneyDetails } from './models/BusJourneyDetails';
 import { BusSeatDetails } from './seat-reservation/BusSeatDetails';
 import { BusDetails } from './models/BusDetails';
 import { ReservationDetails } from './models/ReservationDetails';
+import { User } from './models/User';
+import { PaymentDetails } from './models/PaymentDetails';
+import { TransactionDetails } from './models/TransactionDetails';
+import { MyDto } from './payment/payment.component';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +16,7 @@ import { ReservationDetails } from './models/ReservationDetails';
 export class BookingsService {
 
   baseURL : string = 'http://localhost:8085/busDetails/';
+  baseURL2 : string ='http://localhost:8085/reserv/';
   constructor(private myHttp : HttpClient) { }
 
   getAllBusJourneyDetails() : Observable<BusJourneyDetails[]>
@@ -52,6 +57,31 @@ export class BookingsService {
       return this.myHttp.get<BusJourneyDetails>(this.baseURL+"getBusJourneyDetails/"+jid);
   }
 
+  updateBusSeatDetails(rid : number ,jid : number)
+  {
+          return this.myHttp.get(this.baseURL2+"updateBusSeatesDetailsListSeat/"+rid+"/"+jid+"/"+this.seatesSet);
+  }
+
+  upDateBusJourneyDetails(myDto : MyDto)
+  {
+    return this.myHttp.post(this.baseURL2+"seatCountDecrease/",myDto);
+  }
+
+  insertReservationDetails(reservationDetails : ReservationDetails) : Observable<number>
+  {
+       return this.myHttp.post<number>(this.baseURL2+"addReserve/",reservationDetails);
+  }
+
+  insertPaymentDetails( paymentDetails : PaymentDetails) : Observable<number>
+  {
+    return this.myHttp.post<number>(this.baseURL2+"addPayment/",paymentDetails);
+  }
+
+  insertTransactionDetails(transactionDetails : TransactionDetails)
+  {
+    return this.myHttp.post(this.baseURL2+"addTransaction/",transactionDetails);
+  }
+
 
 
   // getBusSeatDetailsByJourneyId(jid : number)
@@ -59,5 +89,7 @@ export class BookingsService {
   //   return this.myHttp.get(this.baseURL+"getBusSeatesDetails/"+jid);
   // }
    seatesSet  = new Set;
+   myUser : User= new User();
 
 }
+

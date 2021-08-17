@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { BusServiceService } from '../bus-service.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class AdminLoginComponent implements OnInit {
   registeredAdminEmailId:string;
   adminPassword:string;
 
-  constructor(private service:BusServiceService) { }
+  constructor(private service:BusServiceService,private router  : Router) { }
 
   ngOnInit(): void {
     this.adminLoginForm=new FormGroup({
@@ -28,6 +29,7 @@ export class AdminLoginComponent implements OnInit {
 
       if (data){
         alert("Login detail matched");
+        this.router.navigate(['/admin-operations']);
       }
       else{
         alert("Invalid Credentials");

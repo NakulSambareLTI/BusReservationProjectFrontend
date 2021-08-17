@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { BookingsService } from '../bookings.service';
 import { BusServiceService } from '../bus-service.service';
+import { User } from '../models/User';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,7 +13,9 @@ export class LoginComponent implements OnInit {
   loginForm:FormGroup;
   registeredEmailId:string;
   password:string;
-  constructor(private service:BusServiceService) { }
+  myUser : User = new User();
+
+  constructor(private service:BusServiceService,private router  : Router,private bookingsService :BookingsService) { }
 
   ngOnInit(): void {
     this.loginForm=new FormGroup({
@@ -27,6 +32,14 @@ export class LoginComponent implements OnInit {
 
           if (data){
             alert("Login detail matched");
+            this.myUser.username=this.registeredEmailId;
+            this.myUser.isLogeedIn=true;
+            console.log(this.myUser.username);
+            // sessionStorage.setItem("userKey",JSON.stringify( this.myUser));
+            // this.bookingsService.myUser.username=this.registeredEmailId;
+            sessionStorage.setItem('userKey',String(this.myUser.username));
+        console.log(this.myUser.username);
+            this.router.navigate(['/home']);
           }
           else{
             alert("Invalid Credentials");
